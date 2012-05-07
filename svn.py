@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import sys, os, os.path, util
 from xml.dom import minidom
-from core import logger
+from .core import logger
 
 class svn:
     def __init__(self, path = None, url = None):

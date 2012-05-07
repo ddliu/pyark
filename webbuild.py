@@ -1,6 +1,6 @@
 import os, os.path
 import core
-from core import logger
+from .core import logger
 import util
 
 def merge(source, target, sep = '\r\n'):

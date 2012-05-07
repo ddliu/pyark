@@ -1,5 +1,5 @@
 import os, os.path, shutil
-from core import logger
+from .core import logger
 
 '''
 directory syncing

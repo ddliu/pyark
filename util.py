@@ -1,5 +1,5 @@
 import os, os.path, shutil
-from core import logger
+from .core import logger
 
 def run(para, output = True, fetch = False):
     import subprocess
@@ -13,7 +13,7 @@ def run(para, output = True, fetch = False):
             txt = txt.decode(sys.stdout.encoding)
             error = error.decode(sys.stdout.encoding)
         if output:
-            print txt
+            print(txt)
         if fetch:
             return (txt, error)
 

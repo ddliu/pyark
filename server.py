@@ -7,7 +7,7 @@ try:
     from SimpleHTTPServer import SimpleHTTPRequestHandler
 except ImportError:
     from http.server import SimpleHTTPRequestHandler
-from core import logger
+from .core import logger
 
 def simple_server(ip = '127.0.0.1', port = 8000, path = None):
     if path is not None:
