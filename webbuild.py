@@ -1,7 +1,6 @@
 import os, os.path
-import core
+from . import core, util
 from .core import logger
-import util
 
 def merge(source, target, sep = '\r\n'):
     return util.merge_files(source, target, sep)

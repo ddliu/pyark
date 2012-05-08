@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import unittest
-import util, svn
+from . import util, svn
 
 class TestSVN(unittest.TestCase):
     def setUp(self):

@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sys, os, os.path, util
+import sys, os, os.path
 from xml.dom import minidom
+from . import util
 from .core import logger
 
 class svn:
