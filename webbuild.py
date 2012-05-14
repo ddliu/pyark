@@ -1,6 +1,6 @@
 import os, os.path
 from . import core, util
-from .core import logger
+from .core import logger, registry
 
 def merge(source, target, sep = '\r\n'):
     return util.merge_files(source, target, sep)
@@ -15,7 +15,7 @@ def compress(source, target, file_type = None):
         else:
             raise
 
-    bin = core.get_registry('yuicompressor')
+    bin = registry.get('yuicompressor')
     if not os.path.isfile(bin):
         logger.error('please specify path of yuicompressor')
         return False

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import unittest
 from . import util, svn
+from .core import logger
 
 class TestSVN(unittest.TestCase):
     def setUp(self):
@@ -24,5 +25,12 @@ class TestSync(unittest.TestCase):
         print('aa')
         pass
 
+class TestLogger(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def test_logger(self):
+        logger.info('test')
+        
 if __name__ == '__main__':
     unittest.main()
