@@ -16,7 +16,8 @@ def ignore_compile(a):
 ignore version controll files
 '''
 def ignore_vcs(a):
-    return os.path.basename(a) in ['.svn', '.git', '.cvs']
+	basename = os.path.basename(a)
+	return (basename in ['.svn', '.git', '.cvs']) or basename.startswith('.git')
 
 '''
 ignore files with specific extensions
