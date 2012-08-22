@@ -31,18 +31,30 @@ class svn:
         info['url'] = root.getElementsByTagName('url')[0].firstChild.data
         info['revision'] = root.getElementsByTagName('entry')[0].getAttribute('revision')
         info['uuid'] = root.getElementsByTagName('uuid')[0].firstChild.data
-        if len(root.getElementsByTagName('schedule')):
-            info['schedule'] = root.getElementsByTagName('schedule')[0].firstChild.data
-        else:
+        try:
+            if len(root.getElementsByTagName('schedule')):
+                info['schedule'] = root.getElementsByTagName('schedule')[0].firstChild.data
+            else:
+                info['schedule'] = None
+        except:
             info['schedule'] = None
-        if len(root.getElementsByTagName('author')):
-            info['author'] = root.getElementsByTagName('author')[0].firstChild.data
-        else:
+            
+        try:
+            if len(root.getElementsByTagName('author')):
+                info['author'] = root.getElementsByTagName('author')[0].firstChild.data
+            else:
+                info['author'] = None
+        except:
             info['author'] = None
-        if len(root.getElementsByTagName('date')):
-            info['date'] = root.getElementsByTagName('date')[0].firstChild.data
-        else:
+            
+        try:
+            if len(root.getElementsByTagName('date')):
+                info['date'] = root.getElementsByTagName('date')[0].firstChild.data
+            else:
+                info['date'] = None
+        except:
             info['date'] = None
+
         return info
 
     '''
