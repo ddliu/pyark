@@ -70,6 +70,16 @@ def replace_file_content(f, find, replace):
     except:
         return False
 
+def convert_encoding(f, from_encoding, to_encoding):
+	source = open(f)
+	source_content=source.read()
+	source.close()
+	
+	target = open(f, 'w')
+	
+	target.write(unicode(source_content, from_encoding).encode(to_encoding))
+	target.close()
+
 def rmtree(path):
     shutil.rmtree(path, ignore_errors = False, onerror = _handleRemoveReadonly)
 
