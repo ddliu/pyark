@@ -90,3 +90,10 @@ def _handleRemoveReadonly(func, path, exc):
       func(path)
   else:
       raise
+
+def check_bom(f):
+    fh = open(f)
+    bom = fh.read(3) == "\xef\xbb\xbf"
+    fh.close()
+
+    return bom
