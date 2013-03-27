@@ -97,3 +97,9 @@ def check_bom(f):
     fh.close()
 
     return bom
+
+def generate_tmp_path(key):
+    import md5, tempfile
+    m = md5.new()
+    m.update(key)
+    return os.path.join(tempfile.gettempdir(), m.hexdigest())
